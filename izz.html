@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wish New Year</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.5s ease-in-out;
+      overflow: hidden; /* Untuk mengelakkan scrollbar */
+    }
+
+    /* Gaya umum untuk halaman */
+    .page {
+      background-color: beige;
+      color: #4e4e4e;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Mengubah kedudukan supaya tidak terlalu tengah */
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding-top: 5%; /* Memberi ruang pada bahagian atas */
+    }
+
+    /* Gaya untuk teks utama */
+    .page h1 {
+      font-size: 3em; /* Saiz teks yang sesuai */
+      margin: 0;
+    }
+
+    /* Ucapan tambahan di bawah teks utama (saiz yang sama seperti h1) */
+    .page p {
+      font-size: 1.5em; /* Saiz yang sama untuk kedua-dua halaman */
+      margin-top: 20px;
+    }
+
+    /* Elemen bunga api */
+    .fireworks {
+      position: absolute;
+      top: 15%;
+      right: 10%;
+      width: 100px;
+      height: 100px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Fireworks_logo_%282%29.svg');
+      background-size: cover;
+      animation: fireworksAnimation 2s infinite ease-in-out;
+    }
+
+    @keyframes fireworksAnimation {
+      0% { transform: scale(0.5); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(0.5); opacity: 1; }
+    }
+
+    /* Gaya untuk butang */
+    .btn {
+      padding: 10px 20px;
+      background-color: #6c6c6c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 40px;
+    }
+
+    .btn:hover {
+      background-color: #444;
+    }
+
+    /* Footer minimalis */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      background-color: #fff;
+      color: #aaa;
+      font-size: 0.8em;
+      letter-spacing: 1px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Elemen love pixel yang jatuh */
+    .love-pixel {
+      position: absolute;
+      top: -50px; /* Mulakan di atas halaman */
+      font-size: 1.5em;
+      color: pink;
+      animation: loveFall 5s infinite ease-in;
+      pointer-events: none; /* Mengelakkan interaksi dengan elemen lain */
+    }
+
+    /* Animasi untuk love pixel jatuh */
+    @keyframes loveFall {
+      0% { transform: translateY(-100px); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    /* Menghasilkan banyak love pixel pada posisi rawak */
+    .love-pixel:nth-child(odd) {
+      animation-duration: 4s; /* Variasikan kelajuan untuk kesan rawak */
+    }
+
+    .love-pixel:nth-child(even) {
+      animation-duration: 6s; /* Variasikan kelajuan untuk kesan rawak */
+    }
+
+    /* Gaya untuk permohonan maaf */
+    .apology {
+      margin-top: 50px; /* Menambah jarak di atas teks permohonan maaf */
+      padding: 20px;
+      font-size: 1.2em; /* Saiz lebih kecil berbanding teks utama */
+      line-height: 1.5;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Halaman pertama untuk ucapan Tahun Baru -->
+  <div id="page1" class="page">
+    <h1>HAPPY NEW YEAR FROM IZZ !</h1>
+    <p>Hyee Happy New Year Iraa.</p>
+    <div class="fireworks"></div>
+    <button class="btn" onclick="goToPage2()">Tekan Sini</button>
+  </div>
+
+  <!-- Halaman kedua untuk permohonan maaf -->
+  <div id="page2" class="page" style="display: none;">
+    <h1>SOWWYY FROM IZZ</h1>
+    <div class="apology">
+      <p>Hyee iraa, kejap jee kan dah nak 2025. Sayaa just nakk mintak maaf kat awakk sebelum masuk tahun baru nii kalau saya dah banyak kecewakan awakk sakitkan hati awakk apa semua sepanjang kitaa relay dan breakup phase. Sayaa nii tak macam laki lain punya effort yang selalu expose awek dia apa semuaa. Astuu saya pon tauu saya banyak busy lagii dari masa untuk melayan awak, saya tak memahami kehendak awakk apa semua tuu sayaa mintak maaf yee. Saya sayangg kat awak sangatt sangat tau and jangan laa nantii kita dua nii end up jadii stranger okehh tuu jee sedikit sebanyak kata-kata dari sayaa yang keren and saya punya wish before 2025 nii sayaa harap kita dua 0-0 ehh hihii BYEE </p>
+    </div>
+    <button class="btn" onclick="goToPage1()">Page 1</button>
+  </div>
+
+  <!-- Elemen love pixel yang jatuh -->
+  <div class="love-pixel" style="left: 20%; animation-delay: 0s;">❤️</div>
+  <div class="love-pixel" style="left: 40%; animation-delay: 1s;">❤️</div>
+  <div class="love-pixel" style="left: 60%; animation-delay: 2s;">❤️</div>
+  <div class="love-pixel" style="left: 80%; animation-delay: 3s;">❤️</div>
+  <div class="love-pixel" style="left: 25%; animation-delay: 1.5s;">❤️</div>
+  <div class="love-pixel" style="left: 50%; animation-delay: 2.5s;">❤️</div>
+
+  <footer>
+    <p>&copy; 2024 New Year Wishes By Izz</p>
+  </footer>
+
+  <script>
+    // Fungsi untuk menukar halaman ke halaman permohonan maaf
+    function goToPage2() {
+      document.getElementById('page1').style.display = 'none';
+      document.getElementById('page2').style.display = 'flex';
+    }
+
+    // Fungsi untuk kembali ke halaman ucapan Tahun Baru
+    function goToPage1() {
+      document.getElementById('page1').style.display = 'flex';
+      document.getElementById('page2').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
